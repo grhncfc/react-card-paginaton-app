@@ -1,0 +1,38 @@
+.card-style img {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    margin: 0;
+    padding: 0;
+    max-width: 400px;
+    min-height: 250px;
+    max-height: 250px;
+}
+.allCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-style {
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(135deg, #E3E3E3 0%,#5D6874 100%);
+    margin: 20px;
+    width: 400px;
+    height: 450px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.card-write {
+    width: 100%;
+    height: 100%;
+    color: #333222;
+    font: 10px Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: oblique;
+}

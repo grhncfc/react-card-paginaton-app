@@ -1,0 +1,21 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.formStyle {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.submitInput{
+    font-weight: bold;
+}
+.submitInput:hover{
+    background-color: orangered;
+    color: white;
+}
