@@ -7,17 +7,16 @@ function Pagination({cardsPerPage, totalCards, paginate}) {
     for (let i = 1; i<= Math.ceil(totalCards/cardsPerPage); i++) {
         pageNumbers.push(i);
     }
-
-    const onPaginationClick = (e, number) => {
+    const onClick = (e,number) => {
         e.preventDefault();
         paginate(number);
-    };
+    }
     return (
         <Fragment>
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={uuid()} className={"button-design"} >
-                        <a onClick={(e => onPaginationClick(e, number))} href="#" className={"cards-link"}>
+                        <a onClick={() => onClick(e,number)} href="#" className={"cards-link"}>
                             {number}
                         </a>
                     </li>
