@@ -16,7 +16,7 @@ function Pagination({cardsPerPage, totalCards, paginate}) {
             <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={uuid()} className={"button-design"} >
-                        <a onClick={() => onClick(e,number)} href="#" className={"cards-link"}>
+                        <a onClick={(e) => onClick(e,number)} href="#" className={"cards-link"}>
                             {number}
                         </a>
                     </li>
