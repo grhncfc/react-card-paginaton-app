@@ -1,15 +1,16 @@
+//libraries
 import React, {useState, useEffect , useRef} from 'react';
-import './App.css';
-import cardData from "./assets/Data";
+//components
 import Card from "./components/Card/Card";
 import Pagination from "./components/Pagination/Pagination";
 import Input from "./components/Input/Input";
 import Form from "./components/Form/Form";
-
+//assets
+import cardData from "./assets/Data";
+//styles
+import './App.css';
 
 function App() {
-
-
   const [cards,setCards] = useState([]);
   const [loading,setLoading] = useState(false);
   const [currentPage,setCurrentPage] = useState(1);
@@ -31,15 +32,17 @@ function App() {
 
   const onInputChanger = e => {
     inputRef.current[e.target.name] = e.target.value;
-  }
+  };
+
   const onInputSubmit = e => {
     setCardsPerPage(inputRef.current.displayPerPage);
     setFilterState(inputRef.current.search);
     paginate(1);
-  }
+  };
+
   return (
       <div className={"container"}>
-        <Form onSubmit={onInputSubmit}>
+        <Form className="formStyle" onSubmit={onInputSubmit}>
           <Input type={"text"} name={"search"} onChange={onInputChanger} />
           <Input type={"number"} name={"displayPerPage"}  onChange={onInputChanger} />
         </Form>

@@ -1,24 +1,29 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './Pagination.css';
 import uuid from 'react-uuid';
 
-function Pagination({cardsPerPage, totalCards, paginate }) {
+function Pagination({cardsPerPage, totalCards, paginate}) {
     const pageNumbers = [];
     for (let i = 1; i<= Math.ceil(totalCards/cardsPerPage); i++) {
         pageNumbers.push(i);
     }
+
+    const onPaginationClick = (e, number) => {
+        e.preventDefault();
+        paginate(number);
+    };
     return (
-        <div>
-            <ul className={"pagination"}>
+        <Fragment>
+            <ul className="pagination">
                 {pageNumbers.map(number => (
                     <li key={uuid()} className={"button-design"} >
-                        <a onClick={() => paginate(number)} href="!#" className={"cards-link"}>
+                        <a onClick={(e => onPaginationClick(e, number))} href="#" className={"cards-link"}>
                             {number}
                         </a>
                     </li>
                 ))}
             </ul>
-        </div>
+        </Fragment>
     );
 }
 

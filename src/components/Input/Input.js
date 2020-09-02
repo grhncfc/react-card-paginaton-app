@@ -1,16 +1,21 @@
-import React, { useRef, useState} from 'react';
+import React from 'react';
 import './Input.css'
 
-
 function Input(props) {
-    const inputRef = useRef({});
+    const obj = {
+        a1: 5,
+        a2: 10
+    };
+    const arr = [1,2,3];
+    const newArr = [...arr];
 
     const defaultChange = e => {
         e.preventDefault();
         props.onChange(e);
-    }
+    };
+
     return (
-           <input type={props.type} name={props.name} onChange={defaultChange} placeholder={props.name}/>
+           <input {...props} onChange={defaultChange} />
     );
 }
 
