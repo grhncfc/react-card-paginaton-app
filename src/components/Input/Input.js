@@ -1,5 +1,5 @@
 import React, { useRef, useState} from 'react';
-import './Input.css'
+import styles from './Input.module.css'
 
 
 function Input(props) {

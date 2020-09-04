@@ -1,15 +1,15 @@
 import React, {useState, useEffect , useRef} from 'react';
-import './App.css';
+import styles from './App.module.css'
 import cardData from "./assets/Data";
 import Card from "./components/Card/Card";
 import Pagination from "./components/Pagination/Pagination";
 import Input from "./components/Input/Input";
 import Form from "./components/Form/Form";
-
+import Switch from "./components/Switch/Switch"
 
 function App() {
-
-
+  const [toggle,setToggle] = useState(false);
+  const [style,setStyle] = useState({});
   const [cards,setCards] = useState([]);
   const [loading,setLoading] = useState(false);
   const [currentPage,setCurrentPage] = useState(1);
@@ -37,13 +37,19 @@ function App() {
     setFilterState(inputRef.current.search);
     paginate(1);
   }
+  const styleChange = e => {
+    setToggle(toggle ? false:true);
+    setStyle(toggle ? {background: "linear-gradient(135deg, #E3E3E3 0%,#5D6874 100%)"} : {background: "black"});
+    console.log(toggle);
+  };
   return (
-      <div className={"container"}>
+      <div className={styles.container}>
         <Form onSubmit={onInputSubmit}>
+          <Switch checked={toggle} onChange={styleChange} />
           <Input type={"text"} name={"search"} onChange={onInputChanger} />
           <Input type={"number"} name={"displayPerPage"}  onChange={onInputChanger} />
         </Form>
-        <Card cards={currentCard} loading={loading}/>
+        <Card style ={style} cards={currentCard} loading={loading}/>
         <Pagination cardsPerPage={parseInt(cardsPerPage)} totalCards={newCurrentCard.length} paginate={paginate}/>
       </div>
   );

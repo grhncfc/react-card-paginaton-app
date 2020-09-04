@@ -1,4 +1,4 @@
-.card-style img {
+.cardStyle img {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
     margin: 0;
@@ -13,7 +13,7 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-.card-style {
+.cardStyle {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -23,7 +23,7 @@
     height: 450px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
-.card-write {
+.cardWrite {
     width: 100%;
     height: 100%;
     color: #333222;

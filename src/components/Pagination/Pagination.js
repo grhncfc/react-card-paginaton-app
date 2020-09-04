@@ -1,5 +1,5 @@
 import React from 'react';
-import './Pagination.css';
+import styles from './Pagination.module.css'
 import uuid from 'react-uuid';
 
 function Pagination({cardsPerPage, totalCards, paginate }) {
@@ -12,10 +12,10 @@ function Pagination({cardsPerPage, totalCards, paginate }) {
         paginate(number);
     }
     return (
-            <ul className={"pagination"}>
+            <ul className={styles.pagination}    >
                 {pageNumbers.map(number => (
-                    <li key={uuid()} className={"button-design"} >
-                        <a onClick={() => onClick(e,number)} href="#" className={"cards-link"}>
+                    <li key={uuid()} className={styles.buttonDesign} >
+                        <a onClick={e => onClick(e,number)} href="#" className={styles.cardsLink}>
                             {number}
                         </a>
                     </li>

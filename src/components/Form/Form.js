@@ -1,5 +1,5 @@
 import React from 'react';
-import './Form.css'
+import styles from './Form.modeule.css'
 
 function Form(props) {
 
@@ -8,9 +8,9 @@ function Form(props) {
         props.onSubmit(e);
     }
     return (
-        <form className={"formStyle"} onSubmit={defaultSubmit}>
+        <form className={styles.formStyle} onSubmit={defaultSubmit}>
             {props.children}
-            <input className={"submitInput"} type="submit" value={"Submit"} />
+            <input className={styles.submitInput} type="submit" value={"Submit"} />
         </form>
     );
 }
