@@ -8,9 +8,10 @@ function Input(props) {
     const defaultChange = e => {
         e.preventDefault();
         props.onChange(e);
-    }
+    };
+
     return (
-           <input type={props.type} name={props.name} onChange={defaultChange} placeholder={props.name}/>
+           <input {...props} onChange={defaultChange} />
     );
 }
 
